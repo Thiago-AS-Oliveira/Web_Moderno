@@ -40,3 +40,9 @@ const obj5 = {
 }
 
 console.log('obj5:', obj5)
+
+// não é possivel acessar um atributo com a notação ponto ".", caso o nome de um elemento seja númerico
+// neste caso devemos acessar os atributos utilizando colchetes "[]"
+const obj6 = {0: 'abc', 1: "123"}
+// console.log(obj6.0) // error
+console.log(obj6[0], obj6[1])
