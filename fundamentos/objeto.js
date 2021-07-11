@@ -10,7 +10,7 @@ const prod1 = {}
 prod1.nome = "Celular TH"
 prod1.preco = "2100.00"
 
-// ṕodemos utlizar strings como identificadores atribuindo entre colchetes "[]"
+// podemos utlizar strings como identificadores atribuindo entre colchetes "[]"
 prod1["Desconto Exclusivo"] = 0.40 // evite atributos com espaço
 
 console.log(prod1)
