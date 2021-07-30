@@ -1,0 +1,41 @@
+-json é um formato textual, criado para interlocução entre sistemas
+
+-"package.json" é um arquivo descritor do seu projeto, ele funciona não só como descritor
+mas funciona também como arquivo de configuração do seu projeto
+
+abaixo temos o script de "package.json" do projeto "funcionarios"
+{
+  "name": "funcionarios", ("name" nome do projeto) 
+  "version": "1.0.0", ("version" versão do projeto )
+  "description": "", ("description", descrição sobre o projeto)
+  "main": "index.js", ("main"  define o arquivo principal do projeto)
+  "scripts": {  ("scripts" nele é possivel criar scripts para serem executados pela sua app)
+    sua sintaxe consistem em nome:ação ex: "start": nodemon
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [], (palavras chaves do projeto)
+  "author": "", (autor do projeto)
+  "license": "ISC", ("licence" define a licença do projeto)
+  "dependencies": { ("dependencies", aqui ficam as dependências do projeto)
+    "axios": "^0.21.1"
+  }
+}
+
+com o arquivo package.json é possivel recriar a pasta "node_modules" e todas as dependências 
+do projeto que estejam especificadas no arquivo, basta utilizar o comando "npm i" ou "npm install"
+no terminal, o terminal deve estar dentro da pasta do projeto npm install
+
+nesta aula, o arquivo principal em "package.json"  foi alterado
+de "index.js" para "funcionario.js", também foram criados 2 scripts,
+o primeiro foi "start", que é um comando predefinido do node, o outro foi 
+"dev" que é um script próprio, ambos executam o nodemon que executa o arquivo principal do 
+projeto, neste caso funcionario.js
+
+para executar "start", execute no terminal "npm start", essa é a sintaxe
+usada para comandos predefinidos
+"dev" é executado no terminal com "npm run dev", comando necessário para execução de comandos
+não predefinidos
+
+também é possivel encadear comandos, basta usar "&&"
+
+"start": "nodemon && algumaOutraDep"
