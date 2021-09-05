@@ -6,8 +6,11 @@ const fs = require("fs")
 
 // para acessar o arquivo, foi criada a const "caminho" que concatena"__dirname"
 // e "arquivo.json"
-// obs: "__dirname" representa o diretório atual, idependente de onde o arquivo esteja sendo executado
 const caminho = __dirname + "/arquivo.json" 
+
+// obs: "__dirname" representa o caminho absoluto do diretório atual, 
+// idependente de onde o arquivo esteja sendo executado, essa variável muda de acordo com a
+// localização e com o computador onde o arquivo é executado
 
 // lendo arquivos de forma sincrona 
 // será utilizado readFileSync que pode receber 2 params, o path(caminho) e opções,
