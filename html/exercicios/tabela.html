@@ -1,0 +1,64 @@
+
+<table>
+    <caption>Produtos</caption> <!--tag que representa um título-->
+    <thead><!-- Cabeçalho -->
+        <tr><!-- table row, cada um representa uma linha -->
+            <!-- th e td, representam uma coluna cada um -->
+            <!-- th de table head representa o título da coluna -->
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th> 
+        </tr>
+    </thead>
+    <tbody><!-- Corpo da tabela -->
+        <tr>
+            <!-- td(Table data) representa um dado da tabela -->
+            <!-- td pode ser usada em tbody e tfoot -->
+            <td>iPad</td> 
+            <td>3000,00</td>
+            <td>2</td>
+            <td>6.000,00</td>
+        </tr>
+        <tr>
+            <td>Samsung A11</td> 
+            <td>5.000,00</td>
+            <td>1</td>
+            <td>5000,00</td>
+        </tr>
+    </tbody>
+    <tfoot><!-- Rodapé -->
+        <tr>
+            <!-- a propriedade "colspan" define o numero de colunas que um elemento vai ocupar  -->
+            <!-- abaixo o elemento "Total" vai ocupar 3 colunas -->
+            <!-- caso queira ocupar mais de uma linha exista a propriedae "rowspan" -->
+            <td colspan="3">Total</td>
+            <td>11.000,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    thead tr {
+        border-bottom: solid 3px #444;
+    }
+
+    tbody tr:hover {
+        background-color: #dedede;
+    }
+
+    tfoot {
+        background-color: #444;
+        color: #fff;
+        font-weight: bold;
+    }
+
+</style>
