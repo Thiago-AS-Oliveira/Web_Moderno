@@ -1,0 +1,35 @@
+<h1 id="topo">Links</h1>
+
+<!-- URL Absoluta -->
+<!-- acessa arquivos exteriores -->
+
+<h2>URL Absoluta</h2>
+
+<a href="https://www.google.com.br">Google 1</a> <br>
+<!--target="_blank" diz ao browser para abrir em outra aba -->
+<a href="https://www.google.com.br" target="_blank">Google 2</a> <br>
+
+<!-- URL realtiva -->
+<!-- acessa arquivos locais -->
+
+<h2>URL Relativa</h2>
+
+<a href="index.html"> Voltar 1 </a> <br> <!-- Acessa o arquivo na mesma pasta do arquivo que solicitou -->
+<a href="/index.html"> Voltar 2</a> <br><!-- Acessa o arquivo na pasta raiz do projeto -->
+<a href="../index.html"> Voltar 3</a> <br><!-- Volta uma pasta e acessa o arquivo -->
+<!-- "../" é utilizado para voltar uma pasta, para voltar mais pastas faça um encadeamento 
+    ex: "../../arquivo"  -->
+
+<h2>URL para E-mail</h2>
+
+<a href="mailto:mail@gmail.com"> Enviar E-mail </a><br> <!-- Abre uma aplicação para E-mails -->
+
+<h2>URL Ancorada</h2>
+
+<div id="noticia" style="position: absolute; top: 1000px;">
+    <h1>Url Ancorada</h1>
+    <p>Url ancorada joga vc para um trecho da pagina</p>
+    <a href="#topo" style="margin:20px; padding-bottom: 40px;">Voltar ao topo</a>
+</div>
+
+<a href="#noticia">Saiba mais</a>
