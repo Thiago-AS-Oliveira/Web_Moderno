@@ -1,0 +1,69 @@
+<div wm-slider>
+    <p>
+        <!-- imagens são adicionadas com a tag img -->
+        <!-- img é uma tag sem corpo, para acessar a imagem desejada é utilizada a tag "src"
+        com caminho relativo ou absoluto-->
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da cidade" 
+        width="513" height="342" title="Muro da Cidade por Tarso Bessa">
+        <!-- "alt" de alternativa apresenta algum texto caso a imagem não esteja disponivel e passa alguma
+            informação adicional, ela também é utilizada para acessibilidade, em leitores para 
+            deficientes visuais -->
+        <!-- "widht" e "height" definem altura e largura da imagem -->
+        <!-- "title" é utilizado para  dar um título para imagem, 
+            uma explicação em texto sobre aquela imagem, um rótulo ou legenda.   -->
+    </p>
+
+    <!-- são suportados os principais formatos de imagens
+    acima foi adicionada uma imagem "JPG", abaixo terão imagens no formato "GIF" E "PNG" -->
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+        alt="Intro Cod3r" height="342" title="Cod3r">
+    </p>
+
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="Rio de Janeiro" height="342"
+            title="Rio de Janeiro">
+    </p>
+
+    <!-- no exemplo abaixo será adicionada uma imagem de avatar e ao lado um texto 
+    simulando uma mini biografia-->
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="Avatar" height="50" align="left">
+        Olá pessoas, meu nome é Persival, tenho 52 anos e meu sonho é me tornar um programador
+        fullstack, estudo atualmente JavaScript, espero em breve me inserir nessa área do mercado de trabalho.
+    </p>
+
+    <!-- também é possivel adcionar imagens utilizando css -->
+    <!-- a imagem será adicionada da div abaixo -->
+    <p class="cidade"></p>
+
+    <p>
+        <!-- a tag picture é usada para especificar múltiplos elementos que serão exibidos caso,
+            um requisito especificado seja atendido em "source",no atributo "media". 
+            Caso o requisito não seja atendido, será exibido o elemento img -->
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+        </picture>
+    </p>
+
+</div>
+
+<style>
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        /* para adcionar uma imagem é utilizada a propriedade abaixo */
+        /* pode ser utilizado um caminho absolutou ou relativo*/
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg'); 
+        background-position: center; /* define a posição*/
+        background-repeat: no-repeat; /* repetição*/
+        background-size: 200%; /*tamanho*/
+    }
+</style>
