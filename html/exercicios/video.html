@@ -1,0 +1,62 @@
+<!-- videos são adicionados com a tag <video> -->
+<!-- o arquivo é acessado pelo atributo "src" -->
+<!-- <video src="arquivo"></video> -->
+<!-- alem de "src", video pode receber outros atributos -->
+<!-- "width" e "height" ajustam o tamanho do player, "controls" exibe opções de controle para o video, 
+a"utoplay" determina que o arquivo seja executado imediatamente após o carregamento,
+"controlsList="nodownloada" não deixa a opção de download no painel de controle do video-->
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList="nodownload" >
+    <!-- Também é possivel utilizar a tag <source>, essa estratégia é valida caso um browser 
+        não suporte um formato de video ou dê algum erro, ele pula para proxima tag dentro de "video" -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border:solid 1px #444;
+        margin:20px;
+    }
+
+    .progresso > div {
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 14px;
+        width: 0%;
+    }
+
+</style>
+
+<script>
+
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false // desabilita a opção de download no menu de contexto
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}`).onclick = e => video.pause()
+
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%` //
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 100);
+    }
+    
+    configurarVideo('meuVideo')
+
+</script>
