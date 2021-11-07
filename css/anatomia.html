@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor {
+            /* css utiliza o padrão dash-case e também é case sensitive */
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* propriedades de Multiplos Valores */
+            border: solid 3px navy; /* Shorthand property: propriedades que podem ser únicas 
+            porém são atribuitas em uma unica linha*/
+            font-family: Helvetica, monospace;
+            /* Funções: É possivel utilizar funções, como calc e rgb */
+            width: calc(100% - 30px);
+            background-color: rgb(34, 153, 189)
+        }
+
+        /* Usando uma pseudo-classe */
+
+        .seletor:hover{
+            background-color: orangered;
+        }
+
+        /* Usando um pseudo-elemento */
+
+        .seletor::first-letter {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>
