@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Origem CSS: Externo, Interno e Inline</title>
+        <!-- css pode ser adicionado de três formas, inline, interno e externo -->
+    <style>
+        /* css interno */
+        body {
+            background-color: aquamarine;
+        }
+
+        /* html tem ordem crescente no código, os ultimos arquivos linkados tem preferencia,
+        com excessão de inline. */
+    </style>
+    <!-- arquivo externo -->
+    <link rel="stylesheet" href="./css/externo.css">
+</head>
+
+<!-- css Inline 
+tem prioridade sobre as outras maneiras
+essa maneira é a menos recomendada-->
+<body style="background-color: coral;">
+    <h1>E agora?</h1>
+</body>
+
+</html>
