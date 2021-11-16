@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* existem deiferentes seletores em css */
+
+        /* "*" é o seletor universal, com ele todos os elementos são estilizados */
+        /* * {
+            background-color: #f0f0f0;
+            color: black;
+        } */
+
+        /* o seletor de classes é demarcado com ponto e o nome da classe */
+        /* .tag {
+            background-color: grey;
+            color: #f0f0f0;
+        } */
+
+        /* o seletor de id é único e é demarcado com # e o nome do id */
+        /* #aninhado {
+            color: #f77;
+            background-color: #ff0;
+        } */
+
+        /* o símbolo ">" seguido do elemento acessa o decendente direto  */
+        /* somente elementos filhos são acessados, elementos dentro desses filhos não serão 
+        acessadas */
+
+        /* #aninhado > div {
+            background-color: green;
+            color: #f0f0f0;
+        } */
+
+        /* para acessar qualquer elemento decendente de outro elemento declare em seguida */
+        /* #aninhado section { assim todos os elementos "section" dentro de "#aninhado são acessados"
+            background-color: cadetblue;
+            color:  rgb(119, 132, 133);
+            
+        } */
+
+        /* com o simbolo "+", somente elementos irmãos diretos são acessados, desde que 
+        estejam dentro de um mesmo elemento */
+
+        /* p + ul { somente a ul que estiver imediatamente após de "p" será modificada  
+            background-color: cadetblue;
+        } */
+
+        /* com "~" os elementos irmãos gerais serão modificados, desde que estejam dentro de um mesmo
+        elemento*/
+        /* p ~ ol { todas as "ol" que estiverem dentro do mesmo elemento que p serão estilizadas
+            background-color:firebrick;
+            color: #ff0;
+        } */
+
+        /* entro colchetes "[]" é possivel selecionar propriedades e seus valores*/
+        /* [feira] {
+            color: #ff0;
+            background-color: #f77;
+        }
+
+        [feira="casa"] {
+            color: silver;
+            background-color: cadetblue;
+        } 
+        
+        caso queira acessar valores com espaços, utilize ~ antes de = 
+        para acessar valores separados por espaço
+        [feira~=escritorio] {}
+
+        utilizando * é possivel acessar trechos de um valor de propriedades
+        [feira*=sa] {} // qualquer valor que possua "sa" será selecionado
+        */
+
+        /* 
+        "nth-child" seleciona elementos com base em parâmetros
+
+        span:nth-child(1) { //primeiro elemento span de algum elemento
+            background-color: chartreuse;
+        } 
+        
+        section > :nth-child(even) { 
+        "odd" acessa os elementos impares "even" os pares dentro de section
+            background-color: darkcyan;
+        }
+        */
+
+        /* "nth-of-type" seleciona por tipo 
+        section > span:nth-of-type(2) { // selecina o segundo elemento do tipo span
+            background-color: darkgoldenrod;
+        }
+        */
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
