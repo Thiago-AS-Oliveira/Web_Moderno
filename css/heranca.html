@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança</title>
+    <style>
+        /* css trabalha também com o conceito de herança */
+        /* alguns elementos herdan propriedades de um elemento "pai" */
+        body {
+            /* body é o elemento pai da todos os outros elementos de uma página */
+            /* algumas propriedades serão herdadas pelos seus elementos "filhos"  */
+            /* no exemplo abaixo font-family, font-size, color e background-color serão herdadas por div */
+            font-family: monospace;
+            font-size: 40px;
+            color: #fff;
+            background-color: #aaa;
+            border: solid 3px red;
+            padding: 50px;
+            margin: 0;
+        }
+
+        div {
+            background-color: brown;
+            /* border e padding são elementos  */
+            /* inherit é usado para herdar algum valor de alguma propriedade */
+            border: inherit; /* border e padding herdarão os valores de body*/
+            padding: inherit;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Herança</h1>
+    <div>Estou herdando</div>
+</body>
+
+</html>
