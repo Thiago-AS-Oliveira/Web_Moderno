@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+
+        /*
+            Em linhas gerais... 
+
+            1. regras com !important tem preferencia sobre todos (uso não recomendado)
+            2. seletores mais específicos tem preferencia, independendo da posição no código
+            3. ultima regra processada tem prioridade em caso de empate de pesos
+        */
+
+        /* em "p" todas as tags serão modificadas*/
+        p {
+            background-color: #eee;
+        }
+
+        /* utilizar classes é mais específico que apenas 
+        declarar o elemento, nesse caso tudo que conter a classe será selecionado */
+
+        .observacao {
+            background-color: #5f5;
+            border: dashed 5px;
+            padding:20px;
+            font-size: 40px;
+        }
+
+        /* utilizar elementos seguidos de seus seletores é bem mais epecífico que
+        de declarar os elementos ou classes*/
+        
+
+        p.observacao {/* foram selecionados todos os elementos "p" com a classe "observacao"  */
+            padding: 2px;
+            background: linear-gradient(to right,blue, purple, red,orange , yellow, green, #1fc1a1, blue);
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>
