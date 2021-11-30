@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Box Model</title>
+    <style>
+        /* Quase todos os elementos em css são representados por "caixas" */
+        /* Chamamos de box model, essas "caixas" possuem seu conteudo, um espaço interno entre o conteudo 
+        e a borda(padding), a borda(border) e um espaço externo entre outros elementos(margin) */
+        
+        /* padding é uma propriedade "shortcut", com ela definimos o espaço interno */
+
+        /* Utilizando um valor, será aplicado o mesmo espaçamento nas 4 direções */
+        /* ex: "padding: 50px;" */
+
+        /* utilizando dois valores, o primeiro define cima e baixo o segundo a esquerda*/
+        /* e direta, ex:"padding: 25 50;" */
+
+        /* utilizando quatro valores, em sentindo horario, na seguinte ordem */
+        /* padding: cima direita baixo esquerda; ex: padding: 50px 100px 400px 25px;*/
+
+
+        /* é possivel alterar somente um lado utilizando as propriedades padding seguidas de um traço*/ 
+        /* e o lado desejado: "padding-left", "padding-right", "padding-top" e "padding-bottom" */
+
+        /* os mesmos métodos aplicados em padding são aplicados em margin com a diferença de que  */
+        /* margin se refere ao espaço externo */
+
+        /* border define a borda, mais ou menos como uma parede */
+        /* border támbém é uma propriedade shortcut permitindo especificar estilo, largura e cor  
+        ex: "border: solid 10px #000;" */
+        /* támbem é possivel utilizar cada propriedade especifica para cada valor acima 
+        como "border-style" */
+        body {
+            /* todo documento html vem com um estilo predefinido */
+            /* margin por padrão tem o valor predefinido em 8px */
+            font-size: 80px;
+            margin: 0; /* a margem de body foi zerada */
+        }
+
+        .c1 { background-color: orange; }
+
+        .c2 { background-color: skyblue; }
+
+        .c3 { background-color: tomato; }
+
+        div {
+            /* float determina que os elementos sejam colocados ao longo do lado direito ou esquerdo
+            de seu containêr */
+            float: left; 
+            padding: 50px; /* espaço de 50px nas 4 direções entre o elemento filho da div e a borda */
+            margin: 0 20px;/* espaço de 0px no eixo vertical e 20px no horizontal, espaçando as laterais*/
+            border: solid 10px #000;
+            border-radius: 10px; /* propriedade que define o raio(curvatura da borda) */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="c1">1</div>
+    <div class="c2">2</div>
+    <div class="c3">3</div>
+</body>
+
+</html>
