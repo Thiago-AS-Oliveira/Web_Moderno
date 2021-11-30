@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Margin</title>
+    <style>
+        body {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        div {
+            border: solid 5px #222;
+        }
+
+        /* css pode apresentar um efeito sobre margens o "margin collapse" */
+        /* esse comportamento faz com que uma margem se sobreponha a outra, como no exemplo abaixo, */
+        /* cada div tem classes que deixam as margens com 30px, as duas ultimas somente em baixo em uma e outra */
+        /* somente em cima, naturalmente era pra ter um espaçamento de 60px entre as divs de "conteudo1" e  */
+        /* "conteudo2" porém, com o esse efeito, o espaçamento fica em 30px  */
+        .m30 {
+            margin: 30px;
+        }
+
+
+        .mb30 {
+            margin-bottom: 30px;
+        }
+
+        .mt30 {
+            margin-top: 30px;
+        }
+        /* existem algumas maneiras de driblar esse efeito, abaixo estão listados alguns  */
+        /* 
+            float: left / right
+            position: absolute
+            display: inline-block
+        */
+    </style>
+</head>
+
+<body>
+    <div class="m30">Conteúdo 1</div>
+    <div class="m30" style="border: none"></div>
+    <div class="m30">Conteúdo 2</div>
+    <div class="mb30">Conteúdo 3</div>
+    <div class="mt30">Conteúdo 4</div>
+</body>
+
+</html>
