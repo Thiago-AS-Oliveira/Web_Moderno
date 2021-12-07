@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        body {
+            /* body e html por padrão não ocupam a tela inteira,
+            crescem gradulamente, conforme o conteudo da página aumenta */
+            height: 50vh;
+            font-size: 40px;
+            background-color: coral;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        span, div {
+            /* ao utilizar valores relativos certifiquese que o elemento pai tenha uma altura desejada */
+            /* caso a altura do elemento pai não seja definida, um valor relativo em height não será aplicado,
+            somente valores absolutos, o mesmo vale para widht */
+            /* se body não tiver uma altura definida, height com um valor relativo não é aplicada,]
+            já width sim pois body ocupa a largura inteira na tela  */
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin: 1px;
+        } 
+        #externo {
+            height: 150px;
+            width: 400px;
+        }
+
+        #interno {
+            /* a div interna tera largura de 70% de 400px e altura 70% de 150px da div externa  */
+            background-color: #ddd;
+            width: 70%;
+            height: 70%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Título</div>
+    <span>Subtítulo</span>
+    <div id="externo">
+        <div id="interno">
+            Interno
+        </div>
+    </div>
+</body>
+
+</html>
