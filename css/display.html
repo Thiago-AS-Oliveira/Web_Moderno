@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        
+        body {
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+
+        ul { padding: 0;}
+        div { background-color:seagreen;}
+        span { background-color: dodgerblue}
+        li {  background-color: purple}
+
+        /* a propriedade display especifica o tipo de caixa de renderização de um elemento  */
+        /* no html cada elemento tem seu valor padrão de display, que pode ser diferente dependendo do elemento */
+        /* div possue display com o valor "block", ja span tem o valor "inline" */
+        /* os valores mais utilizados na propriedade display são, "inline", "block", "inline", "inline-block" */
+        /* "grid", "flex" e "none", que é utilizado para desaparecer o elemento */
+        /* leia sobre outros valores em: https://developer.mozilla.org/pt-BR/docs/Web/CSS/display */
+
+        div, span, li {
+            width: 200px;
+            height: 80px;
+            padding-top: 30px;
+            text-align: center;
+            display: inline-block;
+            /* block: elemento setado como um bloco, por padrão cada elemento tem sua propria linha e ocupa */
+            /* toda linha da pagina, divs por padrão, possuem a propriedade display como block */
+
+            /* inline: elementos setados na mesma linha, width e height serão ignorados */
+            /* somente padding e margin serão modificados */
+
+            /* inline-block: elementos setados na mesma linha porem como um bloco, sendo possível alterar */
+            /* width e height */
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>
