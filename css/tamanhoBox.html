@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+        /* ao aplicar padding e border a altura e largura por padrão serão alteradas
+        isso ocorre pela propriedade box-sizing, que possui dois valores, "content box" e "border-box"*/
+        /* por padrão o valor da propriedade é "content box" isso faz com que o conteudo adicione o valor 
+        de padding e border na altura e largura*/
+        /* com o valor "border-box"  padding e border são subtraidos da largura e altura*/
+        
+        * {
+            box-sizing: border-box;
+            /* caso queira que todos os elementos se comportem como "border-box", deixe ela declarada universalmente*/
+        }
+
+        body {
+            font-size: 45px;
+        }
+        /* com a propiedade "content-box" a div terá a largura de 100% do body e a altura de 300px mais 
+        o padding e border ou seja 105px(100 do padding e 5 de border) serão adicionados a largura e altura
+        em  cada lado totalizando 500px de altura(105 no topo e 105 abaixo) e 888 de largura(683 que é a 
+        largura padrão do html mais 105px na esquerda e 105 na direita) */
+
+         /* utilizando o valor "border-box" esses 105px de cada lado  serão retirados 
+         do valor total de altura e largura, deixando 90px de altura e 585px de largura para o conteudo da div  */
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        O tamanho do Box é...
+    </div>
+</body>
+</html>
