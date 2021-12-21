@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Float</title>
+        <style>
+            
+        /*Float é uma propriedade CSS que usamos para posicionar algo na tela, 
+        seja um elemento em bloco ou em linha.
+        Com a propriedade float definida, um elemento pode ser empurrado para esquerda ou 
+        para a direita, permitindo que os outros elementos possam organizar em torno dele*/
+                    
+        /* float possui os valores none, right, left, inline-start que 
+        indica para flutuar no começo do elemento pai e inline-end que indica para flutuar no final */
+            body {
+                background-color: #222;
+        }
+        
+        /* existe a propriedade clear que determina se elementos devem se posicionar ao lado 
+        ou abaixo de elementos com a prorpriedade float */
+
+        .c1 {
+            background-color: red;
+            float: right;
+        }
+        
+        .c2 {
+            background-color: green;
+            clear: both;
+            /* existem 4 valores, none, left que determina que elementos fiquem a baixo dos que possuem
+            float left, right que determina para aqueles que possuem float right e both que determina para
+            ambos os lados */
+        }
+        
+        .c3 {
+            background-color: blue;
+        }
+
+        .c4 {
+            background-color: orange;
+        }
+        div {
+            /* todas as divs flutuarão a esquerda  */
+            height: 150px;
+            width: 150px;
+            float: left;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+</body>
+
+</html>
