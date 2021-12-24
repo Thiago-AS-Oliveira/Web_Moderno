@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cores</title>
+    <style>
+        /* 
+            https://www.w3schools.com/colors/colors_hsl.asp
+            
+            https://coolors.co/
+            http://paletton.com/
+        */
+
+        body {
+            /* É possivel definir cores de diferentes maneiras */
+
+            /*Utilizando o nome da cor */
+            background-color: green;
+
+            /* Hexadecimal- uma combinação de 6 valores que variam entre 0 e f(0123456789abcdef) 
+            que definem as cores, os 2 primeiros valores definem a tonalidade vermelha, 
+            os 2 valores do meio definem a tonalidade de verde, e os 2 últimos definem a 
+            tonalidade azul*/
+
+            /* 0 é a tonalidade mais escura de cada cor, a medida que cada valor aumenta 
+            a tonalidade fica mais clara até chegar em f que é a tonalide mais clara */
+            background-color: #f67809;
+            /* é possivel utilizar o código reduzido em 1 valor para cada cor,
+            somente quando os 2 numeros de cada cor são iguais*/
+            background-color: #abc; 
+            
+            /* #000000 ou #000 definem a cor preta, #ffffff ou #fff definem o branco
+             todas as outras cores variam entre esses valores*/
+            
+            /* Ao utilizar mais dois valores é também modificada a transparencia(alfa),
+            assim definindo a opacidade do elemento*/
+            background-color: #320f9af8;
+            background-color: #000c;/* reduzido */
+            
+            /* Função rgb - red, green e blue, cada valor vai de 0 a 255, 0 para tonalidade
+            mais escura, 255 para a mais clara, 0,0,0 define o preto, 255,255,255 define o branco,
+            todas as outras cores variam entre esse valores*/
+            background-color: rgb(55, 110, 220);
+            /* Rgba- define também a transparência(alfa), seu valor vai de 0 até 1 */
+            background-color: rgba(55, 110, 220, .5); /* 0 é opcional ex. 0.5*/
+
+            /* função hsl: hue, saturation and lightness- hue é a cor que vai entre 0 e 360,
+            saturation(saturação) alterna entre 0 e 100%, quanto mais proximo de 0, mais proximo
+            da escala de cinza e quanto mais proximo de 100 mais viva a cor, lightness(brilho) 
+            que também alterna entre 0 e 100%, porém 50% define cor exata, quanto mais próximo de 0
+            mais escuro até chegar no preto e quanto mais próximo de 100 mais claro até chegar no branco */
+            background-color: hsl(299, 58%, 50%);
+            /* hsl(cor, saturação, brilho) formando a cor desejada */
+
+            /* função hsl alfa- hsl com um ultimo valor alternando entre 0 e 100% 
+            definindo a transparência */
+            background-color: hsla( 360, 58%, 50%, 70%);
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
