@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        /*html e css utilizam diferentes unidades de medida*/
+        
+        /* Unidades absolutas são medidas que possuem tamanho fixo, idependente do layout, se o tamanho 
+        do layout for alterado elas permanecem fixas.
+        pixel(px), centímetro(cm) e milímetro(mm) são exemplos de unidades absolutas, entre essas unidades,
+        pixel é mais utilizado*/
+        .unidades-absolutas {
+            position: absolute;
+            font-size: 40px;
+            padding: 20px;
+            border: solid 5px #222;
+            margin: 30px;
+            width: 4cm; /* pouco usado */
+            height: 20mm; /* pouco usado */
+            top: 150px;
+            left: 200px;
+        }
+        /* Unidades relativas, são flexiveis, se adaptam ao layout, se o tamanho for alterado,
+        suas medidas também serão, diminuindo ou crescendo conforme o ajuste, o que é ideal 
+        para responsividade, unidades relativas possuem diferentes bases */
+
+        /* existem as unidades baseadas no viewport, são elas vh(viewport height), vw(viewport width),
+        vmin(viewport min), vmax(viewport max) */
+
+        /* vmin define o tamanho da menor dimensão, vmax define o maior, a partir da mudança da 
+        viewport esses valores mudam, se o elemento for setado com 100vmin(100% da dimensão menor)
+        ele assumirá 100% da dimensão menor. 
+        O link a seguir explica melhor http://devfuria.com.br/html-css/unidade-vw-vh-vmax-vmin/
+        */
+
+        /* vh define a altura da viewport e vw define a largura, seus valores vão de 0 até 100,
+        por serem tamanhos relativos, ambos crescem ou diminuem conforme o tamanho da viewport muda  */
+
+        /* "rem" define tamanhos baseado na fonte raiz, que por padrão é 16px,esse tamanho pode variar
+        de acordo com a configuração de tamanho do seu browser, se ele for adptado para melhor
+        acessibilidade, o tamanho mudará.
+        "em" define  tamanhos baseado na fonte do elemento pai, caso não seja definida,
+        assumirá o tamanho do elemento raiz.
+        1em ou 1rem é 100% do tamanho do elemento pai e do raiz respectivamente, se a fonte
+        pai ou raiz for 50px 1em ou 1rem é igual a 50px, .5em ou .5rem(0.5 é opcional) é igual 
+        a 25px, e por ai vai */
+        .unidades-relativas {
+            position: absolute;
+            font-size: 4em; /* 64px,4x o tamanho padrão de 16px no caso de chrome e edge*/
+            padding: 5%;
+            border: dashed 1vw #321;
+            margin: .8%;
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+        /* ao alterar o tamanho do browser, todo o restante muda também */
+        
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

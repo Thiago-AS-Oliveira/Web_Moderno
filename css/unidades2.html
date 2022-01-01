@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        /* A unidade de porcentagem no CSS é relativa ao bloco onde o elemento está contido.
+        Dependendo da propriedade position seu comportamento muda */
+        /* por padrão uma div ja possui uma largura 100%  */
+       .fora {
+           position: relative; /* influencia o comportamento das divs filhas */
+           background-color: orange;
+           width: 400px;
+           height: 400px;
+           padding: 50px;
+       }
+
+       .dentro {
+           background-color: mediumvioletred;
+           height: 100px;
+           width: 100%;
+           position: static; /* ocupa apenas o espaço dedicado ao conteudo */
+           position: relative;/* ocupa apenas o espaço dedicado ao conteudo */
+           position: absolute; /* ocupa o espaço dedicado ao conteudo + padding */
+           position: fixed; /* ocupa o espaço dedicado a viewport */
+       }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>
