@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* ... */
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            /* valores padrões */
+            /* 16px é o valor padrão do browser, esse valor pode ser alterado no css pelo seletor "html"
+            e também nas configurações, alterando o valor padrão para todas as páginas da web */
+
+            /* caso a div pai não tenha um tamanho de fonte definido, asumirá o valor raiz, padrão do browser */
+            font-size: 1em; /* tamanho relativo, baseado na div pai*/
+            font-size: 100%; /* tamanho relativo, baseado na div pai */
+            font-size: 16px; /* tamanho absoluto */
+            font-size: 12pt; /* tamanho absoluto, equivalente a 16px */
+
+            /* unidades absolutas */
+            font-size: 100px; /* tamanho do pixel é relativo */
+            font-size: 72pt; /* pontos */
+            font-size: 1in; /* polegadas */
+
+            /* unidades relativas */
+            font-size: 2.2em; /* medida do elemento pai */
+            font-size: 2.2rem; /* medida da raiz do html */
+            font-size: 50vh; /* viewport height */
+            font-size: 5vw; /* viewport width */
+
+            /* A propriedade font-family do CSS permite que se faça uma lista de prioridades 
+            de familias de fontes e/ou nomes genéricos de famílias a serem especificados 
+            para um elemento selecionado. Ao contrário da maioria das demais propriedades CSS, 
+            os valores são separados por vírgula para indicar quais são as alternativas. 
+            O Browser irá utilizar a primeira fonte da lista que for encontrada no computador, 
+            ou poderá fazer o dowload utilizando a informação contida na regra @font-face. */
+
+            font-family: monospace;
+            font-family: Georgia, serif; /* serifada */
+            font-family: Verdana, sans-serif; /* sem serifa */
+            /* para importar fontes, são utilizados links para arquivos internos ou externos ao 
+            projeto, que são referenciados dentro do documento html ou css, e depois na propriedade
+            font-family, basta utilizar o seu nome entre aspas */
+            font-family: "Indie Flower", cursive; /* fonte importada */
+
+            font-weight: 100; /* altera o peso da fonte */
+            font-style: italic; /* altera o estilo da fonte */
+            text-transform: uppercase; /* altera o texto em geral */
+            /* text-decoration: overline underline line-through; */ 
+            /* veja mais sobre text-decoration https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration  */
+            word-spacing: 10px; /* altera o espaço entre as palavras */
+            letter-spacing: 10px; /* altera o espaço entre as letras */
+            line-height: 2.5em; /* altera a altura entre as linhas */
+            text-align: center; /* altera o alinhamento do texto */
+        }
+
+        /* estilizando o link */
+        .botao {
+            text-decoration: none;
+            font-size: 28px;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>
