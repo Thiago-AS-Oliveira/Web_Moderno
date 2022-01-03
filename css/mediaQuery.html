@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <style>
+        /* A Media Query permite que sejam aplicadas diversas formatações para
+        atender diferentes dispositivos, ela permite que o desenvolvedor ou desenvolvedora
+        adapte o site ou aplicação para diferentes dispositivos, para que o usuário sinta 
+        a diferença da forma mais sútil possível, sem nenhum incômodo. */
+        div {
+            font-size: 40px;
+            margin: 20px;
+            padding: 20px;
+            background-color: coral;
+            border: solid 5px;
+            display: none;
+        }
+        /* sua sintaxe é simples:
+         @media (criterio de aplicação do estilo) {
+            estilização 
+        } */
+
+        /* É possivel trabalhar somente com um critério */
+        @media (max-width: 600px) { 
+            /* quando a tela possuir a largura igual ou menor que 600px, a div "muito-pequeno"
+            será exibida */
+            .muito-pequeno {
+                display: block;
+            }
+        }
+
+        /* È possivel trabalhar com mais de um critério, utilizando operadores lógicos
+        and(e) e or(ou)  */
+
+        /* or é definido por virgula  */
+        @media (max-width: 100px), (orientation: portrait) {
+            /* quando a tela possuir um largura menor ou igual a 100px ou(or)
+            estiver em modo retrato, a div "pequeno-retrato"  será exibida*/
+            .pequeno-retrato {
+                display: block;
+            }
+        }
+
+        /* assim como em uma linguagem de programação, com o operador and, a estilização 
+        só será aplicada ao atender ambos os critérios */
+        @media (min-width: 500px) and (max-width: 1000px) {
+            /* quando a tela possuir uma largura maior ou igual a 500px e(and)
+            menor ou igual 1000px a div "intervalo será exibida, somente nesses 2 critérios */
+            .intervalo { display: block;}
+        }
+
+        /* para entender mais sobre media query acesse:
+         https://developer.mozilla.org/pt-BR/docs/Web/CSS/Media_Queries/Using_media_queries */
+    </style>
+</head>
+<body>
+    <div class="muito-pequeno">Muito Pequeno</div>
+    <div class="pequeno-retrato">Pequeno ou Retrato</div>
+    <div class="intervalo">Intervalo</div>
+</body>
+</html>
