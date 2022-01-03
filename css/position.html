@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #333;
+            color: #fff
+        }
+
+        /* a propriedade position faz com que os elementos se posicionem de maneiras diferentes */
+
+        .static {
+            /* padrão, elemento estatico com a  posição alterada somente por box sizing, 
+            leva em consideração o elemento anterior*/
+            top: 100px; /* top e left não alteram elementos com o valor static */
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed {
+            /* posição fixa na tela, independente da movimentação, o elemento 
+            permanece no mesmo lugar, não leva em considerção elementos anteriores,
+            elementos posteriores acabam sobrepondo o elemento */
+            position: fixed;
+            bottom: 30px;
+            right: 0;
+            background-color: tomato;
+        }
+
+        .relative1 {
+            /* posição alterada conforme o dev desejar, 
+               leva em consideração o elemento anterior*/
+            position: relative;
+            left: 50px;
+            top: 10px;
+            background-color: seagreen;
+        }
+
+        .absolute1 {
+            /* se posiciona de forma absoluta levando em consideração 
+            somente o viewport, com isso o elemeto se posiciona acima de 
+            elementos anteriores, elementos posteriores acabam sobrepondo 
+            o elemento */
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+
+        }
+
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray; 
+        }
+
+        .absolute2 {
+            /* o comportamento da posição absoluta muda conforme o tipo de posição
+            do elemento pai,caso o valor seja static(padrão), o elemento filho pode se 
+            posicionar fora do elemento pai, levando em consideração somente o viewport,
+            caso o valor seja qualquer outro, o elemento fica limitado somente ao elemento pai  */
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            /* se posiciona de forma fixa até rolar a tela, ao mover a tela ele acompanha a rolagem, 
+            levando em consideração o elementos anteriores, defina em quais direções o elemento irá
+            acompanhar a rolagem com as propriedades, left, right, top e bottom, definindo também a 
+            distância das margens */
+            position: -webkit-sticky; /* específico safari */
+            position: sticky;
+            background-color: #777;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p>
+</body>
+
+</html>
