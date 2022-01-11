@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        /* order define a ordem dos elementos, elementos com ordem maior são exibidos por último,
+        por padrão a ordem de todos os elementos é 0 */
+        
+        /*nth -child seleciona um filho especifico*/
+        .flex-container div:nth-child(3) { /* terceiro elemento filho */
+            background-color: indianred;
+            order: 1; 
+            order: 0;
+            order: -1;
+            /* aling-self alinha somente os elementos selecionados */
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;
+
+        }
+
+        /* flex-grow espande os elementos no eixo principal caso sobre algum espaço no
+        flex container, somente os elementos selecionados serão expandidos.
+        Os elementos selecionados recebem um valor, o número de elementos com esse valor é somado, 
+        o espaço sobrando é dividido pela soma desse valor e o resultado é destribuído para esses
+        elementos. Por padrão o valor é zero */
+
+        /* Neste exemplo sobram 200px e os 4 elementos receberam o valor 1, então os 200px
+        serão dividos por 4(4x1) resultando em 50px e o valor será adicionado no main size dos 
+        elementos, se os elementos receberem o valor 2 será feita a divisão e distribuíção na soma
+        desse valor, 8(4 x 2) e assim por diante. */
+
+        .flex-container div {
+            width: 100px;
+            /* flex-grow: 0; padrão */
+            flex-grow: 1;
+        }
+        
+        /* Elementos que tem peso maior se expandem mais que os outros. */
+
+        /* A primeira div recebe o valor 2, então os 200px serão dividos pela soma das 3 divs
+        com valor 1 mais o valor da div com valor 2 (1+1+1+2),então a operação será 200 / 5, 
+        resultando em 40px, a div com valor 2 recebe duas vezes o resultado(80px) e as divs 
+        com valor 1 recebem 40px cada uma  */
+
+        .flex-container div:nth-child(1) {/* seleciona o primeiro elemento filho */
+            background-color: seagreen;
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+        }
+
+        /* flex-shrink encolhe elementos aplicando a mesma lógica de flex-grow, porém com 
+        o flex container menor que a soma total dos elementos */
+        .flex-container div  {
+            flex-shrink: 1;
+        }
+        .flex-container div:nth-child(1) {
+            flex-shrink: 2;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            width: 600px;
+        }
+
+        /* flex-basis é a maneira preferencial de definir tamanho no main axis */
+        .flex-container div  {
+            /* Essa propriedade tem preferencia em cima de width e height, isso quer dizer que setar 
+            um valor para a propriedade referente ao eixo principal não fará modificações */
+            flex-basis: 100px;
+            /* width não modificará o tamanho pois o eixo está na horizontal, caso o main
+            axis esteja na vertical, height não modificará o tamanho*/
+            width: 200px;
+        }
+
+        .flex-container div:nth-child(4) {
+            /* flex é uma propriedade shortcut, com ela é definido grow, shrink e basis */
+            /* grow shrink basis */
+            flex: 2 5 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

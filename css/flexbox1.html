@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .big {
+            font-size: 1.5em;
+        }
+
+        /* Flexbox é um modelo de layout unidimensional, ou seja, ele lida com uma direção de
+        cada vez, seu objetivo é organizar elementos de uma forma mais simples, utilizando
+        formas mais bem elaboradas de alinhamento */
+
+        .flex-container {
+            /* Primeiramente é necessário declarar a valor "flex" na propriedade display do
+            elemento em que será aplicado o layout, assim será criado um "flex container" */
+            display: flex;
+
+            /* Cada elemento dentro deste "flex container" será um "flex item", esses elementos 
+            serão organizados de acordo com a direção e alinhamento dos eixos e o posicionamento 
+            espaçamento dos elementos */
+            
+            /* Toda organização em flexbox tem como base 2 eixos, o eixo principal(main axis)
+            que pode ter sua direção alterada,e o eixo transversal(cross axis) que estará 
+            numa direção perpendicular do eixo principal.
+            Flexbox também possui o conceito de tamanho, o que é importante para alinhamento 
+            dos elementos,os tamanhos são  principal(main size) e transversal(cross size) ambos
+            acompanham os eixos de mesmo nome.*/
+
+            
+            /* O eixo principal é alterado a partir da propriedade flex-direction, assim mudando
+            a direção do layout */
+            flex-direction: column; /* eixo vertical */
+            flex-direction: column-reverse; /* eixo vertical invertido(de baixo pra cima) */
+            flex-direction: row-reverse; /* eixo horinzontal reverso (da direita pra esquerda)*/
+            flex-direction: row; /* eixo horizontal */
+            
+            /* O tamahno de um flex container é alterado normalmente com as propriedades width 
+            e height, levando em consideração padding, border e margin, caso a largura ou a altura 
+            seja menor que a soma de todos os elementos filhos, acontece um overflow que pode ser 
+            contornado com a propriedade de mesmo nome ou com quebras de linhas. 
+            Os flex items tem seu tamanho relativo ao flex container e ao seu conteúdo, também levando 
+            em consideração padding, margin e border, o "main-size" por padrão acompanha o tamanho do 
+            conteúdo, podendo ser alterado contanto que a soma total de todos o elementos não ultrapasse
+            o "main-size" do flex container, ja o "cross-size" por padrão acompanha o "cross-size do
+            flex" container, podendo ultrapassar o tamanho total */
+            
+            width: 20%;
+            height: 400px;
+            /* Quebras de linha são feitas com a propriedade flex-wrap */
+            flex-wrap: nowrap;  /* sem quebra de linhas"(padrão)" */
+            flex-wrap: wrap-reverse; /* quebra linhas de forma invertida */
+            flex-wrap: wrap; /* quebra de linhas padrão */
+            
+            /* Com flex-flow é possivel estilizar flex-direction e flex-wrap em uma única propriedade */
+             flex-flow: column wrap;
+            flex-flow: column-reverse wrap-reverse;
+            flex-flow: row wrap;
+
+            /* justify-content permite o alinhamento do conteudo no main axis, idependente da direção */
+
+            justify-content: flex-start; /* inicio do main size */
+            justify-content: flex-end; /* final do main size */
+            justify-content: center; /* centralizado */
+            justify-content: stretch; /* padrão */
+            justify-content: space-around; /* distribui espaços iguais em volta dos elementos */
+            justify-content: space-between; /* distribui espaços iguais entre os elementos, exceto nas pontas*/
+            justify-content: space-evenly; 
+
+            /* aling-items permite o alinhamento do conteúdo no cross axis */
+
+            align-items: stretch; /* padrão, alonga os elementos */
+            align-items: baseline; /* alinha pela base da fonte */
+            align-items: center; /* centro */
+            align-items: flex-end; /* final do cross axis */
+            align-items: flex-start; /* inicio do cross axis */
+
+            /* align-content permite alinhar multiplas linhas no Cross Axis,
+            levando em consideração o margin dos elemenentos*/
+            align-content: flex-start; /* linhas coladas no inicio */
+            align-content: flex-end; /* linhas coladas no final */
+            align-content: center; /* linhas coladas no centro */
+            align-content: space-around;/*  espaço distribuido igualmente em volta dos elementos */
+            align-content: space-between; /* espaço distribuido igualmente, menos nas pontas */
+            align-content: baseline; /* alinha pela base da fonte com as linhas coladas  */
+            align-content: space-evenly;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag ed nolabel">1</div>
+        <div class="tag ed nolabel">2</div>
+        <div class="tag ed nolabel big">3</div>
+        <div class="tag ed nolabel">4</div>
+        <div class="tag ed nolabel">5</div>
+        <div class="tag ed nolabel">6</div>
+        <div class="tag ed nolabel">7</div>
+        <div class="tag ed nolabel">8</div>
+        <div class="tag ed nolabel">9</div>
+        <div class="tag ed nolabel">10</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
