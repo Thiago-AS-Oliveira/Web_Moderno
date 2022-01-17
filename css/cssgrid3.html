@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* Organizando uma página com Grid */
+
+        header {
+            /* grid-area identa o elemento para ajudar a na organização do layout da página */
+            grid-area: cabecalho;
+        }
+
+        nav {
+            grid-area: navegacao;
+        }
+
+        main {
+            grid-area: conteudo;
+        }
+
+        footer {
+            grid-area: rodape;
+        }
+
+        body {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+
+            /* grid-template-areas organiza elementos identados com grid-area */
+            grid-template-areas: 
+            /* cada valor entre aspas representa uma linha e cada valor nessas aspas representa 
+            uma coluna, utilize o nome definido em grid-area de cada elemento para definir qual 
+            linha e qual coluna esse elemento ocupa*/
+
+            /* repetir um nome define que o mesmo elemento ocupará mais de uma coluna, 
+            repetir um nome no valor seguinte define que o elemento ocupará mais de uma linha*/
+            "cabecalho cabecalho"  /* cabecalho ocupa 2 colunas */
+            "navegacao conteudo" /* navegacao e conteudo ocupam 1 coluna cada */
+            /* "rodape conteudo" conteudo ocupa 2 linhas */
+            "rodape rodape";
+            
+            /* caso alguma grid area não seja preenchida de forma correta, não será
+            aplicada nenhuma organização */
+            
+        }
+
+        /* adapte as areas para ser mais responsivo*/
+        @media(max-width: 700px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px /*80px*/ 1fr 100px;
+                grid-template-areas: 
+                /* é possivel organizar tudo apenas em uma linha */
+                /* 'cabecalho' */
+                'navegacao'
+                'conteudo'
+                'rodape';
+                row-gap: 5px;
+            }
+
+            header {display: none;}
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTEÚDO</main>
+    <header class="tag">CABEÇALHO</header>
+    <footer class="tag">RODAPÉ</footer>
+    <nav class="tag">NAVEGAÇÃO</nav>
+
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

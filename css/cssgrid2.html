@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+        body {
+            display: grid;
+
+            /* É possivel dar nome as linhas de margem do elemento, assim possibilitando o processo
+            para definir onde um elemento começa e termina */
+            grid-template-columns: 
+            [linha1] 1fr
+            [linha2] 1fr
+            [linha3] 1fr [linha4];
+            grid-template-rows: repeat(3, 1fr);
+            
+            /* column-gap e row-gap definem os espaçamentos entre os elementos */
+            column-gap: 20px;
+            row-gap: 20px;
+            /* gap define colunas e linhas ao mesmo tempo */
+
+            /* primeiro valor define row e o segundo column */
+            gap: 50px 10px;
+            /* um único valor define row e gap */
+            /* com os elementos alinhados o espaçamento fica mais evidente */
+            gap: 15px;
+        }
+        .d1 {
+            /* usando o nome das linhas para definir onde começa e termina uma linha ou coluna */
+            grid-column-start: linha2;
+            grid-column-end: linha4;
+        }
+        
+        .d3 {
+            /* grid-area permite definir o inicio de fim de row e colmun numa mesma propriedade */
+            /* valores são, row-start, column-start, row-end, column-end */
+            grid-area: 2 / linha2 / 4 / linha4;
+            
+        }
+
+        .d2 {
+            /* grid-column e grid-row são propriedades shortcuts para grid-column-start e
+            gri-column-end e grid-row-start e grid-row-end respectivamente  */
+            grid-row: 1 / 4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+</body>
+
+</html>
