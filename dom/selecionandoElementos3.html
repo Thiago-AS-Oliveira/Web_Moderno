@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        // selecionar formularios e elementos pelo "name"
+        
+        console.log(document.forms) // retorna HTMLCollection
+        console.log(document.forms[0])
+
+        // atenção pois cada função retorna um elemento diferente como nodelist ou html colection
+        console.log(document.getElementsByName('pesquisa'))// retorna NodeList
+
+        console.log(document.pesquisa)// retorna o elemento pelo nome, nesse caso o nome pesquisa
+        
+        // função que retorna elementos utilizando o nome, dentro de outro elemento tbm selecionado 
+        // pelo nome
+        // também é possivel fazer alteraçoes usando essa sintaxe seja de valor ou chave
+        console.log(document.pesquisa.q)
+        document.pesquisa.q.value = 'Linux Brasil' // alterou o valor do input
+        document.pesquisa.hl.value = 'en-us'// alterou o valor do select
+        console.log(document.pesquisa.hl.selectedIndex)
+
+    </script>
+</body>
+
+</html>

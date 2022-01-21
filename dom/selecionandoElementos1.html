@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>
+        // Document é o objeto principal da dom e seu atributos são acessados com a notaçao ponto,
+        // tenha cuidado com as letras existem diferenças de elementos com s e sem
+
+        // getElementById seleciona elementos utilizando o id, entre aspas, essa propriedade não contém S pois ids são unicos
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // A função getElementsByTagName seleciona elementos a partir da TAG, essa função retorna uma lista "HTML Colections",
+        // que se parece com um array porém possui algumas limitações, em alguns casos é mais interessante converter para um array
+
+        const divs = document.getElementsByTagName('div') // elements com s pois são múltiplos elementos 
+
+        // uma das formas de converter para Array é utilizando Array.from 
+        // divs foi convertido em array e foi precorrido removendo a classe destaque
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+        // outra maneira é utilizando spread para "espalhar" os elementos
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque')) // array percorrido adicionando a classe destaque
+
+        // getElementsByClassName seleciona elementos a partir da classe, essa função também retorna uma lista HTML COLECTIONS
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let e of ultimosElementos) { // para cada elemento de ultimos elementos remova a classe destaque
+            e.classList.remove('destaque')
+        }
+    </script>
+</body>
+</html>

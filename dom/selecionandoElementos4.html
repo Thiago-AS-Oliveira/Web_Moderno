@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        // Acessando elementos através de elementos próximos
+
+        // A função abaixo imprimi no console sem precisar do tradicional "console.log"
+        function log() {
+            console.log(this)
+        }
+        // Abaixo a função é adicionada no prototype dos elementos
+
+        // HTMLElement é o que seleçoes singulares como getElementById retornam
+        // HTMLCollections é uma lista com multiplos HTMLElements
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+
+        // No contexto de dom, Node é oq eu seleções singulares retornam
+        // Nodelist é composto por Nodes
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista  = document.querySelector('div ul') // acessando uma ul que tem como pai div
+        // acessa o pai do elemento selecionado, nesse caso ul com div como pai
+        lista.parentNode.log() 
+        // retorna um NodeList com os filhos do elemento selecionado, nesse caso retornam 
+        // as li's e os espaços que são interpretados como texto, que são efeitos colaterais de Child
+        lista.childNodes.log() 
+
+        const primeiro = lista.firstChild // acessa o primeiro elemento filho 
+        primeiro.log() // neste caso gera um bug e interpreta o primeiro espaço como elemento, do tipo textual
+        primeiro.nextSibling.log() // retorna o proximo elemento irmão,
+        //  que nesse caso é o primeiro li depois do primeiro espaço
+
+        const ultimo = lista.lastChild // acessa o ultimo elemento filho
+
+        // assim como todos elementos com Child, essa func tbm interpreta espaço como elemento
+        ultimo.log() 
+        // retorna o elemento irmão anterior, que nesse caso é o primiero li antes do espaço
+        ultimo.previousSibling.log() 
+
+        // A função abaixo retorna um HTMLCollection com os filhos do elemento selecionado diferente
+        //  de Child que retorna uma NodeList, e essa função não interpreta os espaços como elementos
+        lista.children.log() 
+        // firstElementChild acessa o primeiro elemento sem interpretar espaços como elementos
+        lista.firstElementChild.log()
+        // lastElementChild acessa o ultimo elemento sem interpretar espaços como elementos
+        lista.lastElementChild.log()
+        
+        const primeiro2 = lista.firstElementChild
+        // nextElementSibling acessa o proximo elemento irmão 
+        primeiro2.nextElementSibling.log()
+        const ultimo2 = lista.lastElementChild
+        // previousElementSibiling acessa o elemento irmão anterior
+        ultimo2.previousElementSibling.log()
+
+        // o trecho abaixo acessa o elemento pai anterior ao pai do elemento selecionado
+        lista.parentNode.previousElementSibling.log()
+        // o trecho abaixo acessa o proximo elemento pai depois do elemento pai selecionado
+        lista.parentNode.nextElementSibling.log()
+
+        // É recomendavel que trabalhar diretamente com o que precisa, se possível
+        document.querySelectorAll('div ul li').log()
+    </script>
+</body>
+
+</html>

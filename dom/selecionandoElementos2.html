@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>
+
+        // querySelector e querySelectorAll são funções que servem como seletores universais,
+        // para utilizar diferentes tipos de seletores é preciso utiliza os mesmos meios do css 
+        // como por exemplo # de ID, . de Class, ou até mesmo a sintaxe de tags ex. 'div ul'
+
+        // querySelector é utilizado para um único elemento, basta definir o nome da tag, classe, id,
+        // pseudo-classes ou atributos próprios, caso seja um seletor para mais de um elemento, 
+        // será retornado somente o primeiro elemento
+        document.querySelector('#primeiro').classList.add('destaque')
+        
+        // querySelectorAll funciona da mesma maneira que querySelector, porém ele é utilizando para 
+        // selecionar múltiplos elementos, todos os elementos são reunidos em um NodeList,
+        // que possui semelhanças com array, porém não é exatamente um, em alguns casos converter 
+        // para um Array será mais interessante
+
+        // a função recebe como parâmetro um seletor, percorre o NodeList retornado
+        // e adiciona a classe destaque em cada elemento
+        const selecionar = seletor => 
+        document.querySelectorAll(seletor).forEach(e => e.classList.add('destaque'))
+        // já esta função tem o mesmo processo, porém remove a classe destaque 
+        const deselecionar = seletor =>
+        document.querySelectorAll(seletor).forEach(e => e.classList.remove('destaque'))
+        selecionar('div')
+        deselecionar('div')
+
+        selecionar('*') //universal
+        deselecionar('*')
+
+        selecionar('.terceiro.ultimo')//contanto que exista tal elemento a ordem não importa
+        deselecionar('.ultimo')
+
+        selecionar(':not(#primeiro)')// não seleciona o primeiro
+        deselecionar('*')
+
+        selecionar(':nth-child(1')// seleciona o primeiro elemento filho de algum outro elemento
+        deselecionar('*')
+
+        selecionar('div:nth-of-type(1)')// seleciona o numero correspondente ao elemento do tipo 
+        // definido antes de ":", nesse caso div ,se o numero 2 for definido, o elemento selecionado 
+        // sera o segundo, se for definido o numero 3, será o terceiro e assim por diante
+        selecionar('span:nth-of-type(1)')
+        deselecionar('*')
+
+        // selecionar a partir de um atributo
+        selecionar('[wb-attrib]')
+    </script>
+</body>
+</html>
