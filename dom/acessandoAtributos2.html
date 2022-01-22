@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        // ideal seria utilizar seletores especificos como id ou classes
+        const lista = document.querySelector('div ul[destino="escritório"]')
+
+        console.log('Elementos "ul".......................')
+        // childNodes retona  uma lista com elementos filhos, considera espaço como elementos 
+        console.log('childNodes:', lista.childNodes) 
+        
+        // propriedades personalizadas não são acessadas utilizando a notaçao ponto, como no exemplo abaixo
+        console.log('destino:', lista.destino)
+
+        // utilizando getAttribute é possivel obter também, um atributo personalizado como destino.
+        console.log('getAttribute:', lista.getAttribute('destino'))
+
+        // hasAttribute faz um teste lógico, verifica se tem um atributo e retorna true ou false
+        console.log('hasAttribute:', lista.hasAttribute('destino')) 
+
+        // setAttribute altera ou adiciona um atributo, nesse caso alterou o valor do
+        // atributo destino de escritório para empresa
+        // o primeiro parâmetro da função é o atributo que será criado ou já existente, o segundo
+        // é o valor do atributo que será criado ou substituído
+        lista.setAttribute('destino', 'empresa')
+        lista.setAttribute('status', 'aberto')// nesse caso adcionou um novo atributo com um valor
+        
+        // removeAttribute remove um atributo
+        lista.removeAttribute('destino')
+
+        // Nas especificação de html é esperado que atributos sejam escritos com o prefixo "data-", 
+        // atributos personalizados com este prefixo tem tratamento diferente de um atributo sem 
+        // o prefixo
+        
+        // atributos com o prefixo "data-" são armazenados no objeto dataset
+        console.log(lista.dataset)
+        // é possivel acessar esses atributos com notaçao ponto, utilizando dataset
+        console.log(lista.dataset.urgencia)
+        // também é possivel alterar o valor usando essa maneira
+        lista.dataset.urgencia = 4 
+        // para acessar esse atributo diretamento é necessário utilizar getAttribute, pois o hifén
+        // do prefixo "data-" não pode ser utilizado como um identificador no javascript, o mesmo
+        // vale para hasAttribute, setAttribute e removeAttribute
+        console.log(lista.getAttribute('data-urgencia'))
+        // console.log(lista.hasAttribute('data-urgencia'))
+        // lista.setAttribute("data-urgencia", "3")
+        // lista.removeAttribute('data-urgencia')
+        // lista.setAttribute('data-urgencia', '4')
+
+        // nem sempre os atributos em html estarão disponiveis para JS com o mesmo nome
+        // como no exemplo abaixo em que queremos acessar o atributo "for" diretamente
+        const label = document.querySelector('label')
+        
+        // for é uma palavara reservada de JS
+        console.log(label.for) // resultado undefined
+
+        // a maneira correta de acessar atributos que podem não estar disponiveis ou são palavras
+        // reservadas de JavaScript é utilizando o prefixo "html"
+        console.log(label.htmlFor)
+        // ou utilizando getAttribute, tratando como string
+        // console.log(label.getAttribute('for'))
+    </script>
+</body>
+
+</html>

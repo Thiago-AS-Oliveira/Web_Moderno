@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+        
+        const img = document.querySelector('img')
+
+        console.log('Formas de acessar atributos:')
+        console.log('getAttribute', img.getAttribute('src')) // acessa o valor do atributo a partir de uma string
+
+        console.log('src', img.src) // acessando o atributo diretamente
+
+        console.log('Utilizando[],["src"]', img['src']) // acessando string de forma resumida
+        console.log('alt', img.alt) // acessando alt
+
+        // Atributos implicitos(universais)
+        console.log("Atributos universais")
+        console.log('Elemento "img".............')
+        console.log('NodeType', img.nodeType) // acessa um número que classifica o tipo do elemento node da dom
+        console.log('NodeName', img.nodeName) // acessa o nome do elemento node
+
+        const src = img.getAttributeNode('src') // acessa o node e propriedades correspondentes ao atributo e não somente o valor
+        console.log('Atributo "src"..........')
+        console.log('NodeType', src.nodeType)
+        console.log('NodeName', src.nodeName)
+        console.log('NodeValue', src.nodeValue) // acessa o valor do elemento node
+
+        const link = document.querySelector('a')
+        console.log('Elemento "a".............')
+        console.log('href', link.href) // acessaando o atributo diretamente
+
+        // Os elementos dentro da tag também representam um elemento node, nesse caso o texto "Cod3r"
+        console.log('firstChild.nodeType', link.firstChild.nodeType)// accessa o tipo do elemento node do primeiro filho
+        // alterando o valor de um elemento com nodeValue
+        link.firstChild.nodeValue = 'IR PARA COD3R'
+    </script>
+</body>
+
+</html>
