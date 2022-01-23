@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        // podemos manipular classes com classList
+        const classes = document.querySelector('div').classList
+        classes.add('destaque')// adiciona classe
+        classes.remove('destaque')// remove classe
+        classes.toggle('destaque')// alterna entre adcionar e remover classes
+        console.log(classes.contains('destaque'))// verifica se existe ou não uma classe 
+        console.log(classes.length)// retorna quantas classes o elemento tem
+        classes.toggle('destaque')
+        console.log(classes.length)
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length)
+
+        // classList é um DOMTokenList, que permite iterações com o laço for ou com forEach,
+        // em alguns casos será mais simples convertê-lo para um array, podendo utilizar todas
+        // as funcionalidades de um array simples
+        for(let c of classes) {
+            console.log(c)
+        }
+
+        classes.forEach(c => console.log(c))
+    </script>
+</body>
+
+</html> 
