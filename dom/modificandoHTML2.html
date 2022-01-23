@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+
+
+        // innerHTML e innerText adicionam ou substituem os elementos internos dentro dos
+        // elementos selecionados pelo valor definido, innerHtml trata esses valores como 
+        // elementos html , já innerText trata somente com texto 
+        div.innerHTML = '<p>Título Alterado</p>' 
+        
+        // outerHTML substitui o elemento selecionado por inteiro, é um método pouco usado
+        // div.outerHTML = '<p>Div Substituida</p>' 
+
+        // insertAdjacentHTML e insertAdjacentText adicionam elementos de maneira relativa 
+        // e próxima ao elemento selecionado, insertAdjacentHTML trata de elementos html,
+        // insertAdjacentText trata de texto
+
+        // beforebegin adciona antes do inicio do elemento (fora)
+        div.insertAdjacentHTML('beforebegin', '<p>Antes do Início</p>')
+        // afterbegin adciona  depois do inicio (dentro)
+        div.insertAdjacentHTML('afterbegin', '<p>Depois do Início</p>')
+        // beforeend adciona antes do fim (dentro)
+        div.insertAdjacentHTML('beforeend', '<p>Antes do Fim</p>')
+        // afterend adiciona depois do fim (fora)
+        div.insertAdjacentHTML('afterend', '<p>Depois do Fimo</p>')
+    </script>
+</body>
+
+</html>

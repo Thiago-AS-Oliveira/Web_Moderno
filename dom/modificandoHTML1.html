@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        // selecionando body
+        const body = document.querySelector('body')
+
+        // createElement cria elementos html 
+        const div1 = document.createElement('div')
+        div1.classList.add('destaque') // adcionando classes
+        // innerHtml adiciona conteúdo aos elementos
+        div1.innerHTML = 'Primeiro'
+
+        const div2 = document.createElement('div')
+        div2.setAttribute('wm-atributo', 'valor')
+        div2.innerHTML = 'Segundo'
+
+        const p = document.createElement('p')
+        p.innerHTML = 'Terceiro'
+        
+        // os elementos foram criados porém eles precisam ser adicionados em elementos já existentes
+        
+        const div3 = document.createElement('div')
+        div3.appendChild(p) 
+        
+        // appendChild adciona um elemento como filho, essa função sempre adiciona os elementos
+        // em ordem crescente, cada elemento que for adicionado é será o ultimo filho 
+
+        // adcionando as divs criadas no body
+        body.appendChild(div1) 
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        // inserindo elementos antes de elementos filhos
+
+        // createTextNode cria um nó de texto
+        const texto = document.createTextNode('Antes...')
+
+        // insertBefore adiciona o elemento selecionado no primeiro parametro (texto)
+        // antes do elemento definido no segundo parametro
+
+        // texto foi adicionado antes do elemento 0 da div3, que é a tag p com o texto "terceiro"
+        div3.insertBefore(texto, div3.childNodes[0])
+        // childNodes é um nodelist que contem todos os elementos de um elemento especfico
+
+        // cloneNode clona um elemento, essa função recebe um parâmetro booleano, se true clona
+        // o elemento e seus filhos false copia somente o elemento
+        const div4 = div3.cloneNode(true) 
+
+        body.appendChild(div4) 
+        
+        // removeChild() remove um elemento filho
+        body.removeChild(div4)
+    </script>
+</body>
+
+</html>
