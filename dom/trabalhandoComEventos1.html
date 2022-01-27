@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <!-- maneira 1: adcionar atributo correspondente ao evento e a função para manipular o evento
+        diretamente na tag, como no exemplo abaixo que podemos adicionar "onclick=navegarEm5s('event')"  -->
+        <!-- Facil leitura de código porem não é possivel o reaproveitamento -->
+        <a esperaDe5s href="https://google.com.br">Google</a>
+    </div>
+    <script>
+        function navegarEm5s(e) {
+            e.preventDefault()// previne para que o comportamento padrão não ocorra
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+        
+        // maneira 2: manipular diretamente através de javascript
+        // Permite reaproveitamento de código, porém dificulta um pouco a leitura
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        // maneira 3: manipular através de javascript utilizando um atributo personalizado
+        // permite reaproveitamento de código, e facilita um pouco a leitura caso o atributo 
+        // tenha um nome sugestivo 
+        const a = document.querySelector('[esperaDe5s]')
+        a.onclick = navegarEm5s
+    </script>
+</body>
